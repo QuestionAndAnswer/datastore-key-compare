@@ -11,8 +11,8 @@ function pathsEqual(list1, list2) {
 /**
  * Compare Datastore Keys 
  * 
- * @param {import("@google-cloud/datastore/build/src/entity").entity.Key} k1 
- * @param {import("@google-cloud/datastore/build/src/entity").entity.Key} k2
+ * @param {import("@google-cloud/datastore").Key} k1 
+ * @param {import("@google-cloud/datastore").Key} k2
  * 
  * @returns {boolean}
  */
