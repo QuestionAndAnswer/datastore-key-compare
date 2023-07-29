@@ -1,4 +1,7 @@
 node_modules
 *.log
-
 .vscode
+dist
+index.js
+.nyc_output
+coverage

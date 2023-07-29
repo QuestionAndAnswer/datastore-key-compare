@@ -1,31 +1,28 @@
-function isEqual(list1, list2) {
-    var maxLength = Math.max(list1.length, list2.length);
-    var i = 0;
-    while(list1[i] === list2[i] && ++i < maxLength);
-    return i === maxLength;
+"use strict";
+
+function pathsEqual(list1, list2) {
+    if (list1.length !== list2.length) return false;
+
+    let i = list1.length;
+    while (list1[i] === list2[i] && --i > 0);
+    return i === 0;
 }
 
 /**
- * @typedef DatastoreKey
- * @type {Object}
- * @property {number} [id]
- * @property {string} [name]
- * @property {string} [namespace]
- * @property {string[]} path
- * @property {DatastoreKey} [parent]
+ * Compare Datastore Keys 
+ * 
+ * @param {import("@google-cloud/datastore/build/src/entity").entity.Key} k1 
+ * @param {import("@google-cloud/datastore/build/src/entity").entity.Key} k2
+ * 
+ * @returns {boolean}
  */
-
-/**
- * @summary Compare Datastore Keys 
- * @param {DatastoreKey} key1 
- * @param {DatastoreKey} key2 
- * @return {boolean} true if euqal, false otherwise
- */
-function compareKeys (key1, key2) {
-    return key1 && key2 && 
-        key1.namespace === key2.namespace && 
-        (key1.id === key2.id || key1.name === key2.name) && 
-        isEqual(key1.path, key2.path);
+function isDSKeyEqual(k1, k2) {
+    return k1 && k2 &&
+        k1.namespace === k2.namespace &&
+        (k1.id === k2.id || k1.name === k2.name) &&
+        pathsEqual(k1.path, k2.path);
 }
 
-module.exports = compareKeys;
+isDSKeyEqual.default = isDSKeyEqual;
+isDSKeyEqual.isDSKeyEqual = isDSKeyEqual;
+module.exports = isDSKeyEqual;

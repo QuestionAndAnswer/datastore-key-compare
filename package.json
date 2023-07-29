@@ -4,7 +4,7 @@
   "description": "Compare datastore key objects utils",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/QuestionAndAnswer/datastore-key-compare#readme",
   "devDependencies": {
-    "@google-cloud/datastore": "^1.3.3",
-    "chai": "^4.1.2",
-    "mocha": "^5.0.0"
+    "@google-cloud/datastore": "^7.5.1",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0"
   }
 }
