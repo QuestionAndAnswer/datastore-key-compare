@@ -1,6 +1,6 @@
 {
   "name": "datastore-key-compare",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Compare datastore key objects utils",
   "main": "index.js",
   "files": [
